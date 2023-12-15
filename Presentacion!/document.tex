@@ -1,0 +1,242 @@
+\documentclass[11pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usetheme{Madrid}
+\begin{document}
+	\author[Jose Lazo]{Jose Ernesto Morales Lazo}
+	\title{Proyecto de Programacion} 
+	\subtitle{Ciencias de la Computacion 1er Año}
+	
+	\institute[UH]{
+		
+		Universidad de la Habana  
+		
+		Facultad de Matematica y Computacion	
+	}
+	
+	%\date{}
+	%\subject{}
+	%\setbeamercovered{transparent}
+	%\setbeamertemplate{navigation symbols}{}
+	\begin{frame}
+		\includegraphics[scale=0.3]{matcom.jpg}
+		\maketitle
+	\end{frame}
+	
+	
+	
+	
+	\section{Resumen}
+	\begin{frame}
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={1-2},currentsection]
+			\end{column}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={3-4},currentsection]
+			\end{column}
+		\end{columns}
+	\end{frame}
+	\begin{frame}{Resumen}
+		\justifying
+		El contenido de esta presentación corresponde a la realizacion del primer proyecto de Programacion de Primer Año de Ciencias de la Computacion . Su objetivo es sintetizar las cuestiones fundamentales del proyecto , ayudar a la compresión de sus clases y métodos y ofrecer una imagen clara del objeto del proyecto , el navegador .
+	\end{frame}
+	
+	\section{Introducción}
+	
+	
+	
+	\subsection{¿Qué es Moogle?}
+	\begin{frame}
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={1-2},currentsection, currentsubsection]
+			\end{column}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={3-4},currentsection , currentsubsection]
+			\end{column}
+		\end{columns}
+	\end{frame}
+	\begin{frame}{¿Qué es Moogle?}
+		\justifying
+		En este proyecto se presenta la realización de un navegador llamado Moogle . Su propósito es ofrecer al usuario la posibilidad de realizar una busqueda sobre un tema de interes y recibir los textos que más posibilidades tengan de satisfacer el contenido de su busqueda . Es un proyecto muy provechoso ya que se trata de algún modo emular una herramienta tan presente en el dia a dia de las personas de nuestro tiempo como son los navegadores . Su presición y rapidez la hacen la enciclopedia por excelencia de nuestro tiempo y un muy buen ayudante en el momento de ayudar a resolver nuestras dudas sobre casi cualquier tema . 
+	\end{frame}
+	\subsection{¿Cuál es la esencia del proyecto?}
+	\begin{frame}
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={1-2},currentsection, currentsubsection]
+			\end{column}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={3-4},currentsection , currentsubsection]
+			\end{column}
+		\end{columns}
+	\end{frame}
+	\begin{frame}
+		El proyecto trata , en esencia , de implentar una tecnica de procesamiento de lenguaje natural como lo es el TD-IDF . Este se encarga de evaluar la importancia de una palabra en un documento o una colección de documentos . Es esta tecnica la que constituye el nucleo  del  navegador .
+	\end{frame}
+	\section {Clases}
+	
+	
+	\subsection {Documentos}
+	\begin{frame}
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={1-2},currentsection, currentsubsection]
+			\end{column}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={3-4},currentsection , currentsubsection]
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	
+	\begin{frame}{Objetivo de la clase Documentos}
+		\justifying
+		La Clase Documentos es la encargada de procesar cada documento de la colección. Cada documento "se convierte " en una lista de palabras que ha sido procesada para eliminar caracteres especiales y espacios innecesarios.
+	\end{frame}
+	\begin{frame}{Métodos principales}
+		\justifying
+		El método constructor inicializa un objeto tipo texto, el cual es una lista de listas de string que contiene las palabras de cada texto procesado. Para procesar los textos, se utiliza el método RecorrerDocumento, que devuelve una lista de listas de string y se encarga de dividir los textos en palabras y eliminar caracteres especiales y espacios.
+		
+		El método Repeticiones devuelve un diccionario que almacena cuántas veces se repite cada palabra en un texto determinado. El método Vocabulario recorre un objeto tipo texto y almacena en un Hash Set de string todas las palabras de cada lista sin que se repiten. El método Index devuelve el número de listas en un objeto tipo Documentos.
+		
+	\end{frame}
+	\subsection {Matriz}
+	\begin{frame}
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={1-2},currentsection, currentsubsection]
+			\end{column}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={3-4},currentsection , currentsubsection]
+			\end{column}
+		\end{columns}
+	\end{frame}
+	\begin{frame}{¿Qué es la clase Matriz?}
+		\justifying
+		La Clase Matriz es responsable de calcular el valor del TF-IDF de cada palabra en cada texto de una colección. Para lograr esto, utiliza una serie de métodos que se encargan de calcular el TF de cada palabra en cada texto, determinar en cuántos textos aparece cada palabra del vocabulario, calcular el IDF de cada palabra y, finalmente, calcular el valor del TF-IDF de cada palabra en cada texto.
+	\end{frame}
+	\begin{frame}{Principales métodos}
+		\justifying
+		El método constructor inicializa un objeto tipo Documentos que se le pasa como parámetro al método CalcularTDIDF, el cual calcula el TF-IDF de cada palabra en cada texto y devuelve una lista de diccionarios con clave string y valor double.
+		
+		El método TFDoc calcula el TF de cada palabra en cada texto y devuelve una lista de diccionarios con clave string y valor double.
+		
+		El método CopiarHash devuelve un diccionario con clave string y valor 0, que se utiliza para saber en cuántos textos de la colección se repite cada palabra del vocabulario.
+		
+		El método NumeroenDocumentos utiliza un HashSet con todas las palabras del vocabulario y un diccionario con todas estas palabras y valor 0 para saber en cuántos documentos aparece cada palabra de la colección de textos.
+		
+		El método IDF calcula el IDF de cada palabra del vocabulario.
+		
+		El método TDIDFDoc calcula el valor del TF-IDF de cada palabra en cada texto y devuelve una lista de diccionarios con clave string y valor double.
+		
+		
+	\end{frame}
+	\subsection {Query}
+	\begin{frame}
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={1-2},currentsection, currentsubsection]
+			\end{column}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={3-4},currentsection , currentsubsection]
+			\end{column}
+		\end{columns}
+	\end{frame}
+	\begin{frame}{¿De qué se encarga la clase Query?}
+		\justifying
+		La Clase Query se encarga de procesar la query ingresada por el usuario en un motor de búsqueda. Tiene métodos para dividir la query en palabras, contar la frecuencia de cada palabra en la misma, calcular el TF de cada palabra, determinar en cuántos documentos de la colección aparece cada palabra de la query, calcular el IDF de cada palabra y finalmente, calcular el valor del TF-IDF de cada palabra en la query. Es fundamental para el procesamiento de la query en el navegador, ya que permite obtener información relevante sobre las palabras utilizadas en la misma y su relevancia en la colección de documentos.
+	\end{frame}
+	
+	\begin{frame}{Principales métodos}
+		
+		\justifying
+		La clase cuenta con métodos como CogerPalabras, para obtener una lista de palabras de la query; Repeticiones, para contar la frecuencia de cada palabra en la query; CogerUna, para obtener el vocabulario de la query; CopiarHash, para crear un diccionario con cada palabra del vocabulario y valor 0; NumeroenDocumentos, para determinar en cuántos documentos aparece cada palabra de la query en la colección; IDF, para calcular el IDF de cada palabra; y CalcularTDIDF, para calcular el valor del TF-IDF de cada palabra en la query.
+		
+	\end{frame}
+	
+	\subsection {Puntuación}
+	\begin{frame}
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={1-2},currentsection, currentsubsection]
+			\end{column}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={3-4},currentsection , currentsubsection]
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{¿Cuál es el onjetivo de la clase?}
+		\justifying
+		La clase Puntuación  se utiliza para calcular los scores de similitud entre una consulta y una colección de documentos, y tiene varios métodos que se encargan de procesar la consulta, obtener los scores y los snippets, y devolver los resultados de la búsqueda.
+		
+		
+	\end{frame}
+	\begin{frame}{Principales métodos}
+		
+		\justifying
+		\setlength\parindent{28.35pt}
+		La clase cuenta con varios métodos fundamentales en el programa :
+		\vspace{0.2cm}
+		
+		\begin{itemize}
+			\item El método Nombres, que obtiene los nombres de los documentos de la colección y los guarda en una lista.
+			\item El método NewCollection, que crea un vocabulario común entre la consulta y los documentos de la colección para poder calcular la similitud de cosenos.
+			\item	El método Scores, que devuelve una lista de los scores de similitud entre la consulta y los documentos de la colección.
+			\item	El método OrdenarScores, que ordena los scores de mayor a menor.
+			\item	El método del Snippet, que devuelve un diccionario con el nombre del documento, el snippet y el score.
+			\item	El método constructor, que inicializa las variables necesarias y llama a los métodos necesarios para obtener los scores y los snippets.
+			\item	El método Query, que procesa la consulta, llama a los métodos necesarios y devuelve un objeto SearchResult con los resultados de la búsqueda.
+			
+			
+		\end{itemize}
+		
+		
+	\end{frame}
+	
+	
+	
+	\section{Conclusiones}
+	\begin{frame}
+		
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={1-2},currentsection]
+			\end{column}
+			\begin{column}{.4\textwidth}
+				\tableofcontents[sections={3-4},currentsection]
+			\end{column}
+		\end{columns}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\justifying
+		El proyecto fue una experiencia muy valiosa para el aprendizaje y práctica de la programación. A través de su realización, se pudo mejorar las habilidades en el manejo de estructuras de datos como arrays, listas y diccionarios, que son fundamentales en la mayoría de los proyectos de programación. Además, se aprendieron técnicas de procesamiento de lenguaje natural, en particular el TF-IDF, que es una técnica importante en la búsqueda y recuperación de información.
+		
+		La realización de un proyecto complejo por primera vez fue una experiencia exigente, pero enriquecedora. Permitió aplicar conocimientos, resolver problemas y aprender de los errores, lo que se traducirá en una mejora de las habilidades en el desarrollo de proyectos más complejos en el futuro.
+		
+		
+	\end{frame}
+	
+	\newpage
+	\vspace*{\fill}
+	\begin{center}
+		
+		\Huge Fin
+	\end{center}
+	\vspace*{\fill}
+	
+\end{document}
+
+
+
+
+
+
+\end{document}

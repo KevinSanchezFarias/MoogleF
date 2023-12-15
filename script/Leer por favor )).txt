@@ -1,0 +1,3 @@
+Si se llama a la funcion help se despliega una lista con las opciones que ofrece el script
+Entre las opciones esta la opcion interactiva que permite interactuar con el script como su nombre indica .
+Gracias :)
